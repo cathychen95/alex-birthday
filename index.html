@@ -15,6 +15,8 @@
 
 	<div class="blind"></div>
 	<div class="overlay">
+		<img class="nav right" src="img/right.svg"/>
+		<img class="nav left" src="img/right.svg"></img>
 		<div class="memory">
 			<div class="close"></div>
 			<img class="memory-img"/>
@@ -24,7 +26,7 @@
 	<div class="message-section">
 		<div class="message-row">
 			<div class="message">
-				<h2 style="text-align: center;">Dear Alexander Sands,</h2>
+				<h2 style="text-align: center;">Dear <span class="ass-master">Alexander</span> Sands,</h2>
 				<br><br>
 				<h3>Happy 21st.</h3>
 				<br>
@@ -44,20 +46,17 @@
 	<img class="arrow" src="img/arrow.png"/>
 	<div class="container">
 		<h1>Remember that time when...</h1>
+		<div class="friend">
+		</div>
 	</div>
 	<div class="footer">
 		<div class="wishes">
-			Happy Birthday Alex!
+			Happy Birthday <span class="ass-master">Alex</span>!
 		</div>
 	</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 <script type="text/javascript">
-	
-	// hover over for assmaster
-	// flip switch - ugy arrow
-	// PS - server security
-	// andrew garfield
 
 	$(document).ready(function() {
 
@@ -92,11 +91,7 @@
 		});
 
 		// show memory modal listener
-		$(".container").on("click", ".friend", function(event) {
-			event.stopPropagation();
-			var friend = $(this).data("name");
-			console.log(friend);
-			console.log(messages);
+		function showModal(friend) {
 			if (messages[friend]["has-image"]) {
 				$(".memory-img").attr("src", "img/"+ friend + ".jpg")
 				$(".memory-text").css("margin-left", $(".memory-img").width())
@@ -105,10 +100,34 @@
 			else {
 				$(".memory-img").hide();
 			}
+
+			var previousFriend = messages[friend]["previous"];
+			if (previousFriend.length > 0) {
+				$(".left").data("nav-to", previousFriend);
+				$(".left").show();
+			} else {
+				$(".left").hide();
+			}
+
+			var nextFriend = messages[friend]["next"];
+			if (nextFriend.length > 0) {
+				$(".right").data("nav-to", nextFriend);
+				$(".right").show();
+			} else {
+				$(".right").hide();
+			}
+
 			$(".memory-text").html("<h2>" + messages[friend]["that-time"] + "</h2><br><hr><br>" + messages[friend]["body"] + "<br><h3>- " + messages[friend]["first-name"] + " -</h3>");
 			$(".blind").show();
 			$(".overlay").show();
 			$("body").addClass("noscroll");
+		};
+		$(".container").on("click", ".friend", function(event) {
+			event.stopPropagation();
+			var friend = $(this).data("name");
+			// console.log(friend);
+			// console.log(messages);
+			showModal(friend);
 		});
 
 		// dismiss modal listeners
@@ -116,7 +135,7 @@
 			$(".blind").hide();
 			$(".overlay").hide();
 			$("body").removeClass("noscroll");
-		}
+		};
 		$(document).keyup(function(e) {
 			if (e.keyCode === 27) {
 				hideModal();
@@ -138,9 +157,20 @@
 				scrollTop: $(".container").offset().top
 			});
 		});
+
+		// nav listener
+		$(".nav").click(function() {
+			event.stopPropagation();
+			var navFriend = $(this).data("nav-to");
+			showModal(navFriend);
+		});
+
+		// assmaster listener
+		$(".ass-master").hover(function() {
+			$( this ).html("Assmaster");
+		}, function() {
+			$( this ).html("Alex");
+		});
 	});
 </script>
 </html>
-
-<!-- CASES TO DEAL WITH -->
-<!-- MICHELLE NIE -->

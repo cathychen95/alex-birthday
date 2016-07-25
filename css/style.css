@@ -215,6 +215,35 @@ h1 {
 	}
 }
 
+.left {
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    left: 30px;
+    
+}
+
+.right {
+	right: 30px;
+}
+
+.nav {
+	position: absolute;
+	height: 80px;
+	width: 80px;
+	top: 40%;
+	z-index: 10;
+	opacity: 0.5;
+}
+
+.nav:hover {
+	opacity: 0.2;
+	cursor: pointer;
+}
+
 .memory {
 	background-color: #FFF;
 	margin: 8% auto;
@@ -273,4 +302,8 @@ h4 {
 .close:hover {
 	opacity: 0.8;
 	cursor: pointer;
+}
+
+.ass-master {
+	cursor: default;
 }
