@@ -17,7 +17,7 @@
 	<div class="overlay">
 		<img class="nav right" src="img/right.svg"/>
 		<img class="nav left" src="img/right.svg"></img>
-		<img class="loader" src="img/heart.gif"></img>
+		<img class="loader" src="img/sunny.gif"></img>
 		<div class="memory">
 			<div class="close"></div>
 			<img class="memory-img"/>
@@ -105,6 +105,7 @@
 				$(".left").data("nav-to", previousFriend);
 				$(".left").show();
 			} else {
+				$(".left").data("nav-to", "");
 				$(".left").hide();
 			}
 			var nextFriend = messages[friend]["next"];
@@ -112,6 +113,7 @@
 				$(".right").data("nav-to", nextFriend);
 				$(".right").show();
 			} else {
+				$(".right").data("nav-to", "");
 				$(".right").hide();
 			}
 
@@ -148,10 +150,22 @@
 			$(".blind").hide();
 			$(".overlay").hide();
 			$("body").removeClass("noscroll");
+			$(".right").data("nav-to", "");
+			$(".left").data("nav-to", "");
 		};
 		$(document).keyup(function(e) {
 			if (e.keyCode === 27) {
 				hideModal();
+			} else if (e.keyCode === 37) {
+				var friend = $(".left").data("nav-to");
+				if (friend.length > 0) {
+					showModal(friend);
+				};
+			} else if (e.keyCode === 39) {
+				var friend = $(".right").data("nav-to");
+				if (friend.length > 0) {
+					showModal(friend);
+				};
 			}
 		});
 		$(".close").click(function() {
