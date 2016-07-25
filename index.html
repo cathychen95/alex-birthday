@@ -68,16 +68,12 @@
 			var rowTrack = 0;
 			var domStore = [];
 			for (var key in messages) {
-				console.log(rowTrack);
 				if (rowTrack % 5 == 0) {
 					if (rowTrack != 0) {
-						console.log("end row");
 						domStore.push("</div>");
 					}
-					console.log("begin row");
 					domStore.push("<div class='row'>");
 				}
-				console.log("in row");
 				domStore.push("<div class='col-5'>");
 				domStore.push("<div class='friend' data-name=" + key + ">");
 				domStore.push("<div class='friend-name'>");
@@ -139,8 +135,6 @@
 		$(".container").on("click", ".friend", function(event) {
 			event.stopPropagation();
 			var friend = $(this).data("name");
-			// console.log(friend);
-			// console.log(messages);
 			showModal(friend);
 		});
 
