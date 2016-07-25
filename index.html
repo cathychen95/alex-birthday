@@ -122,12 +122,14 @@
 				$(".right").hide();
 			}
 
-			$(".memory-text").html("<h2>" + messages[friend]["that-time"] + "</h2><br><hr><br>" + messages[friend]["body"] + "<br><h3>- " + messages[friend]["first-name"] + " -</h3>");
+			$(window).on("load", function() {
+				$(".memory-text").html("<h2>" + messages[friend]["that-time"] + "</h2><br><hr><br>" + messages[friend]["body"] + "<br><h3>- " + messages[friend]["first-name"] + " -</h3>");
 
-			$(".blind").show();
-			$(".overlay").show();
-			$(".memory").show();
-			$("body").addClass("noscroll");
+				$(".blind").show();
+				$(".overlay").show();
+				$(".memory").show();
+				$("body").addClass("noscroll");
+			});
 		};
 		$(".container").on("click", ".friend", function(event) {
 			event.stopPropagation();
