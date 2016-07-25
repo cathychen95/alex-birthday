@@ -46,8 +46,6 @@
 	<img class="arrow" src="img/arrow.png"/>
 	<div class="container">
 		<h1>Remember that time when...</h1>
-		<div class="friend">
-		</div>
 	</div>
 	<div class="footer">
 		<div class="wishes">
@@ -95,22 +93,20 @@
 			$(".memory-text").css("margin-left", $(".memory-img").width());
 			$(".memory-text").html("<h2>" + messages[friend]["that-time"] + "</h2><br><hr><br>" + messages[friend]["body"] + "<br><h3>- " + messages[friend]["first-name"] + " -</h3>");
 
-		}
+		};
 		function showModal(friend) {
 			$(".memory").hide();
-			$(".memory-img").empty();
-			$(".memory-text").empty();
 			if (messages[friend]["has-image"]) {
 				$(".memory-img").attr("src", "img/"+ friend + ".jpg")
 				$(".memory-img").show();
+				$("img").on("load", function() {
+					updateText(friend);
+				});
 			}
 			else {
 				$(".memory-img").hide();
-			}
-
-			$("img").on("load", function() {
 				updateText(friend);
-			});
+			}
 
 			var previousFriend = messages[friend]["previous"];
 			if (previousFriend.length > 0) {
@@ -127,8 +123,6 @@
 			} else {
 				$(".right").hide();
 			}
-
-			
 
 			$(".blind").show();
 			$(".overlay").show();
