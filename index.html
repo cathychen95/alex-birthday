@@ -99,11 +99,13 @@
 				$(".memory-img").attr("src", "img/"+ friend + ".jpg")
 				$("img").on("load", function() {
 					$(".memory-text").css("margin-left", $(".memory-img").width());
+					$(".memory-text").html("<h2>" + messages[friend]["that-time"] + "</h2><br><hr><br>" + messages[friend]["body"] + "<br><h3>- " + messages[friend]["first-name"] + " -</h3>");
 				});
 				$(".memory-img").show();
 			}
 			else {
 				$(".memory-img").hide();
+				$(".memory-text").html("<h2>" + messages[friend]["that-time"] + "</h2><br><hr><br>" + messages[friend]["body"] + "<br><h3>- " + messages[friend]["first-name"] + " -</h3>");
 			}
 
 			var previousFriend = messages[friend]["previous"];
@@ -122,7 +124,7 @@
 				$(".right").hide();
 			}
 
-			$(".memory-text").html("<h2>" + messages[friend]["that-time"] + "</h2><br><hr><br>" + messages[friend]["body"] + "<br><h3>- " + messages[friend]["first-name"] + " -</h3>");
+			
 
 			$(".blind").show();
 			$(".overlay").show();
