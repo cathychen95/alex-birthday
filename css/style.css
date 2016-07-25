@@ -244,6 +244,14 @@ h1 {
 	cursor: pointer;
 }
 
+.loader {
+	left: 50%;
+	right: 50%;
+	position: absolute;
+	height: 30px;
+	width: 30px;
+}
+
 .memory {
 	background-color: #FFF;
 	margin: 8% auto;
