@@ -92,10 +92,27 @@
 		function updateText(friend) {
 			$(".memory-text").css("margin-left", $(".memory-img").width());
 			$(".memory-text").html("<h2>" + messages[friend]["that-time"] + "</h2><br><hr><br>" + messages[friend]["body"] + "<br><h3>- " + messages[friend]["first-name"] + " -</h3>");
-
+			$(".memory").show();
 		};
 		function showModal(friend) {
 			$(".memory").hide();
+
+			// set modal nav
+			var previousFriend = messages[friend]["previous"];
+			if (previousFriend.length > 0) {
+				$(".left").data("nav-to", previousFriend);
+				$(".left").show();
+			} else {
+				$(".left").hide();
+			}
+			var nextFriend = messages[friend]["next"];
+			if (nextFriend.length > 0) {
+				$(".right").data("nav-to", nextFriend);
+				$(".right").show();
+			} else {
+				$(".right").hide();
+			}
+
 			if (messages[friend]["has-image"]) {
 				$(".memory-img").attr("src", "img/"+ friend + ".jpg")
 				$(".memory-img").show();
@@ -107,26 +124,8 @@
 				$(".memory-img").hide();
 				updateText(friend);
 			}
-
-			var previousFriend = messages[friend]["previous"];
-			if (previousFriend.length > 0) {
-				$(".left").data("nav-to", previousFriend);
-				$(".left").show();
-			} else {
-				$(".left").hide();
-			}
-
-			var nextFriend = messages[friend]["next"];
-			if (nextFriend.length > 0) {
-				$(".right").data("nav-to", nextFriend);
-				$(".right").show();
-			} else {
-				$(".right").hide();
-			}
-
 			$(".blind").show();
 			$(".overlay").show();
-			$(".memory").show();
 			$("body").addClass("noscroll");
 		};
 
