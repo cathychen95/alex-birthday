@@ -173,5 +173,40 @@
 		"first-name": "Jonathan",
 		"last-name": "Dubin",
 		"has-image": true
+	},
+	"allison-chou": {
+		"that-time": "Remember that time when I made Ben kiss you on the cheek at Smokes?",
+		"body": "<p>Alex -- no matter how much time passes between one encounter and the next, you and I always manage to pick up from where we left off. I'm proud to call you my friend, and I'm always looking forward to the next big thing from you. You are so impressive, from your humility to your intellectual horsepower to your unearthly metabolism. Can't wait to see you sometime soon!!!!! Love, Allison</p>",
+		"first-name": "Allison",
+		"last-name": "Chou",
+		"has-image": true
+	},
+	"connor-swords": {
+		"that-time": "Remember that time when we went out for the first time during freshman NSO?",
+		"body": "<p>I tried to find the best picture to match the story. Throwback to night one of NSO, when our de facto M&T crew first learned the concepts of jungle juice, sweaty crowds, and \"ratio.\" After we managed to get into a few different parties (hopping a fence to get into one, if I remember correctly), we ended up at a party in a random basement. By this point in the night, only the foursome of us two, Scott, and Olivia remained. I will never forget the sense of confusion when Scott gestured for us to leave. Only when Olivia and Scott started making out (RIP freshman M&T drama) did we get the message. Although we shared quite a few late night walks back to the quad, that one stands out to me as a quintessential freshman memory.</p>",
+		"first-name": "Connor",
+		"last-name": "Swords",
+		"has-image": true
+	},
+	"emily-huber": {
+		"that-time": "Remember that time when we were pong champions?",
+		"body": "<p>Alexander,</p><br><p>We've come pretty far from those write-up avoiding status report days.Whether it was crushing beer/tequila pong in the basement of Sig Nu, getting a $300 parking ticket or you dying on the couch from salmonella, when I do see you, it's always been memorable.  Thank you for always being the other rational person in 4044, putting up with all the shit we give you and never ever failing to notice when we mess up you sock drawer. You're an incredible friend and I know you'll go on to do amazing things.  I am sad I don't get to celebrate with you tonight, but know there's a cake waiting when you get back! </p><br><p>Happy 21st! Please don't die tonight. (But someone please make sure he's drunk.) </p>",
+		"first-name": "Emily",
+		"last-name": "Huber",
+		"has-image": true
+	},
+	"sarah-baer": {
+		"that-time": "Remember that time when you set me up with a new best friend?",
+		"body": "<p>Sands, I've said it before and I'll say it again, you baffle me constantly as a person. I don't know anyone who is as smart/capable/humble/fun all wrapped into one. You are one of the few people who can make IAA events a grand old time, so naturally, my story is about last spring's formal. The night started off strong, with me, you and Mirá shoving our way to be first off the bus. We then quickly found shelter from the masses, shoveling down appetizers in a corner booth, but were sure to make our voices heard later in the night, being the loudest people in the room to cheer over a number of thinly-veiled insults directed at Mira. One can't, of course, forget us staring in mutual horror/amusement at freshmen from a certain other conference dancing, and I think it was after fleeing the dance floor that you sent me on a friend set up with Jyothi. That night, like so many others, made me feel grateful to be a part of the clique (lol).  You--and the rest of the UPMUNC crew--will always be a part of some of my best memories at Penn--the open bars and bacon-wrapped scallops are really just icing on the cake. Happy happy birthday--I hope it's an amazing day and year to come!! p.s. maybe your new age/gained wisdom will help explain what your hands are doing in this pic.</p>",
+		"first-name": "Sarah",
+		"last-name": "Baer",
+		"has-image": true
+	},
+	"julia-hewitt": {
+		"that-time": "Remember that time when you called me a fat ass?",
+		"body": "<p>Honestly, there are too many times to remember.</p><br><p>Alex, HAPPY BIRTHDAY. Thanks for always being there to take and give abuse these past three years. Even though it sounds like we're always fighting, you know I love you really. I mean how could I not, given we both are a tad OCD (#thingsthatfitperfectlyintootherthings), share a love of software updates and inbox zero, and are the best team for making fun of our housemates (we can't let them get off easy next year). Hope you're having the best day, and can't wait to see you in a few weeks. xxxxxx</p>",
+		"first-name": "Julia",
+		"last-name": "Hewitt",
+		"has-image": true
 	}
 }
