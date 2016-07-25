@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<meta name="robots" content="noindex">
+	<title>We Love Alex Sands</title>
+	<link rel="stylesheet" type"text/css" href="css/style.css"/>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+	<div class="blind"></div>
+	<div class="overlay">
+		<div class="memory">
+			<div class="close"></div>
+			<img class="memory-img"/>
+			<div class="memory-text"></div>
+		</div>
+	</div>
+	<div class="message-section">
+		<div class="message-row">
+			<div class="message">
+				<h2 style="text-align: center;">Dear Alexander Sands,</h2>
+				<br><br>
+				<h3>Happy 21st.</h3>
+				<br>
+				<p>All of us give you shit all the time, and for a variety of things, but we made this site since we wanted to show you how much your friends care about you. From your OCD cleanliness to your obsession with calendar events, you're a weird guy, but we love you for that and couldn’t imagine you any other way.</p>
+				<br>
+				<p>We know you love stories, so we’ve gathered a story from a bunch of your friends and collected them on this site. Anytime you want you can come here and read stories from your friends.</p>
+				<br>
+				<p>So here’s a cheers to being 21, being attacked by a few more baboons, and writing a few more epic Facebook event descriptions.</p>
+				<br>
+				<h3>Love,</h3>
+				<br>
+				<h3>Your friends</h3>
+			</div>
+		</div>
+
+	</div>
+	<img class="arrow" src="img/arrow.png"/>
+	<div class="container">
+		<h1>Remember that time when...</h1>
+	</div>
+	<div class="footer">
+		<div class="wishes">
+			Happy Birthday Alex!
+		</div>
+	</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	
+	// hover over for assmaster
+	// flip switch - ugy arrow
+	// PS - server security
+	// andrew garfield
+
+	$(document).ready(function() {
+
+		// load messages from json
+		var messages = {}
+		$.getJSON("messages.json", function(data) {
+			messages = data;
+
+			// create memory boxes
+			var rowTrack = 0;
+			var domStore = [];
+			for (var key in messages) {
+				console.log(rowTrack);
+				if (rowTrack % 5 == 0) {
+					if (rowTrack != 0) {
+						console.log("end row");
+						domStore.push("</div>");
+					}
+					console.log("begin row");
+					domStore.push("<div class='row'>");
+				}
+				console.log("in row");
+				domStore.push("<div class='col-5'>");
+				domStore.push("<div class='friend' data-name=" + key + ">");
+				domStore.push("<div class='friend-name'>");
+				domStore.push(messages[key]["first-name"] + "<br><span class='last-name'>" + messages[key]["last-name"] + "</span>");
+				domStore.push("</div></div></div>");
+				rowTrack++;
+			}
+			domStore.push("</div>");
+			$(".container").append(domStore.join("\n")); // jank af DOM creation lmao
+		});
+
+		// show memory modal listener
+		$(".container").on("click", ".friend", function(event) {
+			event.stopPropagation();
+			var friend = $(this).data("name");
+			console.log(friend);
+			console.log(messages);
+			if (messages[friend]["has-image"]) {
+				$(".memory-img").attr("src", "img/"+ friend + ".png")
+				$(".memory-text").css("margin-left", $(".memory-img").width())
+				$(".memory-img").show();
+			}
+			else {
+				$(".memory-img").hide();
+			}
+			$(".memory-text").html("<h2>" + messages[friend]["that-time"] + "</h2><br><hr><br>" + messages[friend]["body"] + "<br><h3>- " + messages[friend]["first-name"] + " -</h3>");
+			$(".blind").show();
+			$(".overlay").show();
+			$("body").addClass("noscroll");
+		});
+
+		// dismiss modal listeners
+		function hideModal() {
+			$(".blind").hide();
+			$(".overlay").hide();
+			$("body").removeClass("noscroll");
+		}
+		$(document).keyup(function(e) {
+			if (e.keyCode === 27) {
+				hideModal();
+			}
+		});
+		$(".close").click(function() {
+			hideModal();
+		});
+		$(window).click(function() {
+			hideModal();
+		});
+		$(".memory").click(function(event) {
+			event.stopPropagation();
+		});
+
+		// arrow scroll listener
+		$(".arrow").click(function() {
+			$("html, body").animate({
+				scrollTop: $(".container").offset().top
+			});
+		});
+	});
+</script>
+</html>
+
+<!-- CASES TO DEAL WITH -->
+<!-- MICHELLE NIE -->
