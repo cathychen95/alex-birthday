@@ -97,7 +97,9 @@
 			$(".memory-text").empty();
 			if (messages[friend]["has-image"]) {
 				$(".memory-img").attr("src", "img/"+ friend + ".jpg")
-				$(".memory-text").css("margin-left", $(".memory-img").width())
+				$(window).on("load", function() {
+					$(".memory-text").css("margin-left", $(".memory-img").width());
+				});
 				$(".memory-img").show();
 			}
 			else {
