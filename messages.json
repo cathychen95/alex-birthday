@@ -266,6 +266,33 @@
 		"first-name": "Julia",
 		"last-name": "Hewitt",
 		"previous": "sarah-baer",
+		"next": "connor-wen",
+		"has-image": true
+	},
+	"connor-wen": {
+		"that-time": "Remember that time when you you picked me up as your little?",
+		"body": "<p>Happy birthday Sands :) Some of my favorite chapters were when you were there telling stories. Thanks for bringing me into the fam and looking to hang out with you much more in the upcoming year. Have an amazing birthday in my hometown! </p>",
+		"first-name": "Connor",
+		"last-name": "Wen",
+		"previous": "julia-hewitt",
+		"next": "devin-williams",
+		"has-image": true
+	},
+	"devin-williams": {
+		"that-time": "Remember that time when I spilled beer all over your shoes, then you returned them?",
+		"body": "<p>I guess those white leather converse just weren't meant to be. Thanks for not hating me and only giving me shit for a little bit. Though this is just one of them, the summer has been full of laughs and memories thanks to you. It's crazy how much time can pass but how little has changed. Spending the summer with the Caffe Crew feels like hanging out with friends I've had forever. I can't wait to keep in touch and maybe end up in the bay for more adventures to come. Happy happy birthday sands!! </p>",
+		"first-name": "Devin",
+		"last-name": "Williams",
+		"previous": "connor-wen",
+		"next": "mira-naseer",
+		"has-image": true
+	},
+	"mira-naseer": {
+		"that-time": "Remember that time when we voluntarily spent a weekend chairing a model UN conference?! ://",
+		"body": "<p>Alex Sands, you are truly one of the most amazing and inspiring people I have ever met. So glad we had our first ever conversation a whole year after we first met and it was about how to work a projector at UPMUNC lol. We've come a long way since then with nights at Copa & Tap, attempting to post-game at your house and forcing me to go to GBM. I'm pretty much in denial that I'm not going to be there next year so you better be prepared for me to randomly drop by and be ready to get $3 Coronas :D HAPPY HAPPY HAPPY BIRTHDAY, have the best day ever ily!!!! </p>",
+		"first-name": "Mira",
+		"last-name": "Naseer",
+		"previous": "devin-williams",
 		"next": "",
 		"has-image": true
 	}
